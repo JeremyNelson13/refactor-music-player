@@ -12,4 +12,4 @@ mongoose.connect(process.env.MONGO_URI,
     .catch(err => console.log(err, 'Error connecting to Database'))
 
 module.exports.User = require('./userModel')
-module.exports.Song = require('./songModel')
+module.exports.Song = require('./blogModel')

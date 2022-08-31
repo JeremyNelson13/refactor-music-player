@@ -5,7 +5,7 @@ require('dotenv').config()
 const port = process.env.PORT
 
 //root
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.json('server is running'))
 
 //router
 app.use('/library', require('./controllers/library'))

@@ -14,7 +14,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    playlists: {
+    blogs: {
         type: Array,
         required: false
     }
