@@ -16,9 +16,20 @@ router.post('/register', async (req, res) => {
     } catch (err) {
         res.status(500).json(err)
     }
+    // try {
+    //     res.status(200).json("hello from endpoint @ /register")
+    // } catch (err) {
+    //     res.status(500).json(err)
+    // }
 })
 //login a user
-router.post('/login', async (req, res) => {})
+router.post('/login', async (req, res) => {
+    try {
+        res.status(200).json("hello from endpoint @ /login")
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
 //get all users
 router.get('/getusers', async (req, res) => {})
 

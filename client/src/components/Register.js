@@ -6,16 +6,22 @@ import Button from 'react-bootstrap/Button'
 const Register = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState({
-        username: '',
+        name: '',
         email: '',
         password: ''
     })
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setUser((prevState) => ({
+    //             ...prevState,
+    //             [name]: value,
+    //     }))
+    // }
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setUser((prevState) => ({
-                ...prevState,
-                [name]: value
-        }))
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value
+        })
     }
         
     const handleSubmit = async (e) => {
@@ -68,33 +74,39 @@ const Register = () => {
                 //onChange={(e) => setUser({...user, password: e.target.value})}
                 />
                 <button>Register</button> */}
-                <Form>
+                <Form action='/library' method='POST' onSubmit={handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
                         <Form.Control 
                         type="text" 
+                        name='name'
                         placeholder="Username" 
                         value={user.name} 
-                        onChange={handleChange}/>
+                        onChange={handleChange}
+                        />
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control 
                         type="email" 
+                        name='email'
                         placeholder="Enter email" 
                         value={user.email} 
-                        onChange={handleChange}/>
+                        onChange={handleChange}
+                        />
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
                         <Form.Control 
-                        type='text' 
+                        type='password' 
+                        name='password'
                         placeholder='Password' 
                         value={user.password}
-                        onChange={handleChange} />
+                        onChange={handleChange}
+                         />
                     </Form.Group>
 
-                    <Button variant='primary' type='submit' onClick={handleSubmit}>
+                    <Button variant='primary' type='submit'>
                         Register
                     </Button>
                 </Form>

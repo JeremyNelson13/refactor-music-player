@@ -29,7 +29,7 @@ const Login = () => {
         })
         const data = await res.json();
         console.log(data);
-        navigate('/library/landing')
+        navigate('/')
     }
 
     return (
@@ -37,7 +37,7 @@ const Login = () => {
             <h1 className='text-center'>Login</h1>
             <hr />
             <div className='flex flex-col gap-3 w-96 p-5'>
-                <Form>
+                <Form action='/library/login' method='POST' onSubmit={handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control
@@ -48,7 +48,8 @@ const Login = () => {
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
                         <Form.Control
-                            type='text'
+                            type='password'
+                            name='password'
                             placeholder='Password'
                             onChange={handleChange} />
                     </Form.Group>
@@ -56,7 +57,7 @@ const Login = () => {
                     <Button
                         variant='primary'
                         type='submit'
-                        onClick={handleSubmit}>
+                    >
                         Login
                     </Button>
                 </Form>
