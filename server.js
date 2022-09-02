@@ -19,4 +19,4 @@ app.get('/', (req, res) => res.json('server is running'))
 app.use('/library', require('./controllers/library'))
 
 //listen
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`App listening on port ${port}!`))

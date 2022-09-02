@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Landing = () => {
   //get all blogs from the server
   // const [blogs, setBlogs] = useState([]);

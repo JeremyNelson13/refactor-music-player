@@ -1,9 +1,16 @@
-import React from "react";
+import React, {useState}from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 
 const CreateBlog = () => {
+    const navigate = useNavigate();
+    const [blog, setBlog] = useState({
+        title: '',
+        content: '' 
+    })
+
     return (
         <div className="min-h-screen flex items-center justify-center">
             <h1 className="text-center">Create Blog</h1>
@@ -22,6 +29,7 @@ const CreateBlog = () => {
                         Submit
                     </Button>
                 </Form>
+                <Link to="/">Return to Landing</Link>
             </div>
         </div>
     );

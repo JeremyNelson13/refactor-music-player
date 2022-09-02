@@ -8,6 +8,7 @@ import Landing from './components/Landing';
 import Register from './components/Register';
 import Login from './components/Login';
 import AboutUs from './components/AboutUs';
+import CreateBlog from './components/CreateBlog';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/about' element={<AboutUs/>} />
           <Route path='/register' element={<Register/>} />
           <Route path='/login' element={<Login/>} />  
+          <Route path='/create' element={<CreateBlog/>} />
         </Routes>
       </Router>
     </div>
