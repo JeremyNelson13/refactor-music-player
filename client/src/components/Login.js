@@ -17,20 +17,22 @@ const Login = () => {
             [name]: value
         }))
     }
-    const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(user);
         const res = await fetch('http://localhost:5000/library/login', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
             },
             body: JSON.stringify(user)
         })
         const data = await res.json();
         console.log(data);
-        navigate('/')
+        navigate('/'); //redirect to home page
     }
+
 
     return (
         <div className='min-h-screen flex items-center justify-center'>

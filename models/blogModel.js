@@ -9,6 +9,11 @@ const blogSchema = new Schema({
     content:{
         type: String,
         required: true
+    },
+    //many to one relationship with user model
+    user:{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
 }, {timestamps: true})
 

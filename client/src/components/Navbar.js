@@ -16,6 +16,7 @@ const NavigationBar = () => {
                             <Nav.Link href="/create">Get Started</Nav.Link>
                             <Nav.Link href="/about">About</Nav.Link>
                             <Nav.Link href="/login">Login/Register</Nav.Link>
+                            <Nav.Link href="/logout">Logout</Nav.Link>
                         </Nav>
                         
                     </Container>

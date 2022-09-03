@@ -11,10 +11,9 @@ const userSchema = new Schema({
     password:{
         type: String
     },
-    blogs: {
-        type: Array
-    }
-})
+    //one to many relationship with blog model
+    blogs: [{type: Schema.Types.ObjectId, ref: 'Blog'}]
+} , {timestamps: true})
 
 const User = mongoose.model('User', userSchema)
 

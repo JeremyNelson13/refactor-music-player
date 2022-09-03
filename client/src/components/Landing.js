@@ -2,17 +2,16 @@ import React from 'react'
 
 
 const Landing = () => {
-  //get all blogs from the server
-  // const [blogs, setBlogs] = useState([]);
-  // const getBlogs = async () => {
-  //   const response = await fetch('http://localhost:5000/library/blogs')
-  //   const data = await response.json();
-  //   setBlogs(data);
-  // }
-  // useEffect(() => {
-  //   getBlogs();
-  // } , [])
-      
+  const [blogs, setBlogs] = useState([]);
+  const getBlogs = async () => {
+    const response = await fetch('http://localhost:5000/library/blogs')
+    const data = await response.json();
+    setBlogs(data);
+  }
+  useEffect(() => {
+    getBlogs();
+  } , [])
+
 
 
   return (
@@ -20,9 +19,14 @@ const Landing = () => {
       <h1 className='text-center'>Welcome to QuickBlog</h1>
       <hr />
       <div>
-
+        {blogs.map((blog) => (
+          <div key={blog._id}>
+            <h3>{blog.title}</h3>
+            <p>{blog.content}</p>
+            <Link to={`/library/blogs/${blog._id}`}>Read More</Link>
+          </div>
+        ))}
       </div>
-        
     </div>
   )
 }
