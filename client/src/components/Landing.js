@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const Landing = () => {
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs, user, setUser] = useState([]);
   const getBlogs = async () => {
     const response = await fetch('http://localhost:5000/library/blogs')
     const data = await response.json();

@@ -28,9 +28,9 @@ const handleSubmit = async (e) => {
             },
             body: JSON.stringify(user)
         })
-        const data = await res.json();
-        console.log(data);
-        navigate('/'); //redirect to home page
+        const data = await res.json()
+        console.log(data)
+        navigate('/')
     }
 
 
